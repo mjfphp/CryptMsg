@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% load static %}
+    <meta charset="UTF-8">
+    <title>{% block title %}Default Title{% endblock %}</title>
+    <link href="http://brobin.github.io/hacker-bootstrap/css/hacker.css" rel="stylesheet">
+    <link href="{% static 'css/main.css' %}" rel="stylesheet">
+</head>
+<body>
+            {% block jsh %}{% endblock %}
+    <div class="menu">
+        <ul class="nav nav-tabs">
+            <li class="active"><a aria-expanded="true" href="/" data-toggle="tab">Encrypt</a></li>
+            <li class=""><a aria-expanded="false" href="#" data-toggle="tab">Rapports</a></li>
+            <li class=""><a aria-expanded="false" href="#" data-toggle="tab">Contacts</a></li>
+        </ul>
+    </div>
+    {% block content %}
+      {% endblock %}
+
+    <script
+            src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+        {% block jsf %}{% endblock %}
+</body>
+</html>

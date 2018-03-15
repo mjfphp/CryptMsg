@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} Crypt Msg {% endblock %}
+
+{% block jsh %}
+    <script src="{% static 'js/global.js' %}"></script>
+{% endblock %}
+{% block content %}
+
+  <div class="cnt">
+        <div class="wrapper">
+            <header>
+                <a href="#"><img  onclick="methode('aes')" class="c" src="{% static 'img/aes.png' %}"width="70" height="70" data-info="AES"></a>
+                <a href="#"><img onclick="methode('rsa')" class="rsa" src="{% static 'img/rsa.png'  %}" width="70" height="70" data-info="RSA"></a>
+                <a href="#"><img onclick="methode('cesar')" class="c" src="{% static 'img/csr.png' %}" width="70" height="70" data-info="CESAR"></a>
+                <a href="#"><img onclick="methode('des')" class="c" src="{% static 'img/des.png' %}" width="70" height="70" data-info="DES"></a>
+            </header>
+            <div class="body">
+                <div class="left">
+                    <div class="txtCnt">
+                        <h3>Encrypted Message :</h3>
+                        <div class="well well-lg h" id="msg">
+                               .
+                        </div>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="well">
+                        <form class="form-horizontal"  action="" method="POST">
+                                     {% csrf_token %}
+                            <fieldset>
+                                <legend>AES</legend>
+                                <div class="form-group">
+                                    <label for="inputMsg" class="col-lg-2 control-label">Message</label>
+                                    <div class="col-lg-10">
+                                        <input class="form-control" id="inputMsg" placeholder="Message" type="text">
+                                    </div>
+                                </div>
+                                <div class="form-group key1 key">
+                                    <label for="inputKey1" class="col-lg-2 control-label">Key</label>
+                                    <div class="col-lg-10">
+                                        <input class="form-control" id="inputKey1" placeholder="Key" type="text">
+                                    </div>
+                                </div>
+                                <div class="form-group key2 key">
+                                    <label for="inputKey2" class="col-lg-2 control-label">Key</label>
+                                    <div class="col-lg-10">
+                                        <input class="form-control" id="inputKey2" placeholder="Key" type="text">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-lg-10 col-lg-offset-2">
+                                        <button type="submit"   onclick="ty('de')"  class="btn btn-default">Decrypt</button>
+                                        <button type="submit"   onclick="ty('en')"  class="btn btn-primary">Encrypt</button>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+        {% block jsf %}
+            <script src="{% static 'js/ajax.js' %}"></script>
+        {% endblock %}
+

@@ -1,0 +1,65 @@
+.nav{
+    display: flex;
+    justify-content: center;
+}
+.cnt{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 80vh;
+}
+.wrapper{
+    width: 90vw;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+}
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90vw;
+}
+header a{
+    margin: 16px 25px;
+}
+header a img {
+    background-color: green;
+}
+.body{
+    width: 90vw;
+    height: 70vh;
+    display: flex;
+}
+.left,.right{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.left{
+    flex: 1;
+    padding: 1rem;
+}
+.right{
+    flex: 1;
+    padding: 1rem;
+}
+.h {
+    max-height: 50vh;
+    overflow: auto;
+}
+.left > div{
+    overflow: auto;
+}
+.txtCnt{
+    padding: 7px;
+}
+::-webkit-scrollbar{
+    width: 5px;
+}
+.key{
+    display: none;
+}
+

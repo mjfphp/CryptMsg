@@ -188,6 +188,7 @@ class des():
                 tmp = self.xor(g, tmp)
                 g = d
                 d = tmp
+
             result += self.permut(d + g, PI_1)  # Do the last permut and append the result to result
         final_res = bit_array_to_string(result)
         if padding and action == DECRYPT:

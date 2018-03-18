@@ -16,7 +16,7 @@ Including another URLconf
 
 from django.conf.urls import url
 from django.contrib import admin
-from CrypteMsg.views import Index,cdRsa
+from CrypteMsg.views import Index,cdRsa,Crypt
 from django.urls import path
 
 
@@ -24,6 +24,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^admin/', admin.site.urls),
     path("",Index,name="index"),
-    url(r'cm', cdRsa, name='cm')
+    url(r'cm', cdRsa, name='cm'),
+    url(r'c', Crypt, name='c')
     ]
 

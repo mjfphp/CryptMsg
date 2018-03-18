@@ -31,7 +31,7 @@ def multiplicative_inverse(e, phi):
     temp_phi = phi
 
     while e > 0:
-        temp1 = temp_phi / e
+        temp1 = temp_phi // e
         temp2 = temp_phi - temp1 * e
         temp_phi = e
         e = temp2
@@ -113,6 +113,7 @@ def RsaEncrypt(p,q,text):
     # if is_prime(p) and is_prime(q):
       public, private = generate_keypair(p, q)
       encrypted_msg = encrypt(private, text)
+      print(encrypted_msg)
       return  "Your encrypted message is: ",\
           encrypted_msg," \n Decrypting message with public key : ", public
     # else :
@@ -125,7 +126,6 @@ def RsaEncrypt(p,q,text):
     #           return    p," et ",q," are not a primes numbers"
 def RsaDecrypt(p,q,text):
     t=(int(p),int(q))
-    text=text[1:len(text)-2]
     text=text.split(',')
-    text=[long(x) for  x in text]
+    text=[int(x) for  x in text if x.isdigit()]
     return  "your message is : ",decrypt(t, text)

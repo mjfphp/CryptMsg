@@ -62,4 +62,9 @@ header a img {
 .key{
     display: none;
 }
-
+.key1{
+    display: block;
+}
+.reset{
+    background-color: white !important;
+}
